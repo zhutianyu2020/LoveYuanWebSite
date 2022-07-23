@@ -45,7 +45,7 @@
     </div>
 
     <div class="message">
-      <p>End</p>
+      <p>突然很想你</p>
     </div>
 
     <!-- <el-dialog :visible.sync="centerDialogVisible" width="30%" center :show-close="false"
@@ -63,6 +63,14 @@
 
 
 <script>
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b8355e277764fa39008454937a81afe6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
 export default {
   name: "Love",
   data() {
