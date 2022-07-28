@@ -45,7 +45,7 @@
     </div>
 
     <div class="message">
-      <p>突然很想你</p>
+      <p>End</p>
     </div>
 
     <!-- <el-dialog :visible.sync="centerDialogVisible" width="30%" center :show-close="false"
