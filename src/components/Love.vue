@@ -1,66 +1,64 @@
 <template>
-  <div class="main" id="app">
-    <div class="acquaintance">相识</div>
-    <div class="time">
-      <ul>
-        <li class="days">
-          <div>Days</div>
-          <div>{{ days }}</div>
-        </li>
-        <li class="hours">
-          <div>Hours</div>
-          <div>{{ hours }}</div>
-        </li>
-        <li class="minute">
-          <div>Minutes</div>
-          <div>{{ minutes }}</div>
-        </li>
-        <li class="second">
-          <div>Seconds</div>
-          <div>{{ seconds }}</div>
-        </li>
-      </ul>
-    </div>
+  <div id="app">
+    <div id="container">
+      <video autoplay muted loop>
+        <source src="../video/PC.mp4" type="video/mp4" />
+      </video>
+      <div class="box">
+        <div class="acquaintance">相识</div>
+        <div class="time">
+          <ul>
+            <li class="days">
+              <div>Days</div>
+              <div>{{ days }}</div>
+            </li>
+            <li class="hours">
+              <div>Hours</div>
+              <div>{{ hours }}</div>
+            </li>
+            <li class="minute">
+              <div>Minutes</div>
+              <div>{{ minutes }}</div>
+            </li>
+            <li class="second">
+              <div>Seconds</div>
+              <div>{{ seconds }}</div>
+            </li>
+          </ul>
+        </div>
 
-    <div class="love" @click="choose">相恋</div>
-    <div class="time">
-      <ul>
-        <li class="days">
-          <div>Days</div>
-          <div>{{ lovedays }}</div>
-        </li>
-        <li class="hours">
-          <div>Hours</div>
-          <div>{{ lovehours }}</div>
-        </li>
-        <li class="minute">
-          <div>Minutes</div>
-          <div>{{ loveminutes }}</div>
-        </li>
-        <li class="second">
-          <div>Seconds</div>
-          <div>{{ loveseconds }}</div>
-        </li>
-      </ul>
-    </div>
+        <div class="love" @click="choose">相恋</div>
+        <div class="time">
+          <ul>
+            <li class="days">
+              <div>Days</div>
+              <div>{{ lovedays }}</div>
+            </li>
+            <li class="hours">
+              <div>Hours</div>
+              <div>{{ lovehours }}</div>
+            </li>
+            <li class="minute">
+              <div>Minutes</div>
+              <div>{{ loveminutes }}</div>
+            </li>
+            <li class="second">
+              <div>Seconds</div>
+              <div>{{ loveseconds }}</div>
+            </li>
+          </ul>
+        </div>
 
-    <div class="message">
-      <p>End</p>
+        <div class="message">
+          <p>中秋快乐</p>
+        </div>
+      </div>
     </div>
-
-    <!-- <el-dialog :visible.sync="centerDialogVisible" width="30%" center :show-close="false"
-            :close-on-click-modal="false" :close-on-press-escape="false">
-            <span>做我女朋友,好不好?</span>
-            <span slot="footer" class="dialog-footer">
-                <el-button @click="centerDialogVisible = false">拒绝</el-button>
-                </el-button>
-                <el-button type="primary" @click="agree">答应</el-button>
-                </el-button>
-            </span>
-        </el-dialog> -->
   </div>
 </template>
 
+
+<script  src="../script/main.js"></script>
 
 <script>
 var _hmt = _hmt || [];
@@ -140,11 +138,6 @@ export default {
 </script>
 
 
-
-
-
-
-
 <style>
 @font-face {
   font-family: "love";
@@ -156,12 +149,8 @@ export default {
   padding: 0;
 }
 
-.el-dialog.el-dialog--center {
-  border-radius: 10px;
-}
-
 body {
-  background: #949494;
+  background: #ffef94;
 }
 
 li {
@@ -173,32 +162,15 @@ a {
   text-decoration: none;
 }
 
-.main {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.box {
   text-align: center;
-  /* background-image: url(images/2.jpg);
-        background-size: 100% 100%;
-        background-repeat: no-repeat; */
-
-  /* background: url(../image/3.png) center 25% no-repeat; */
-  background-size: 80% auto;
-
   font-family: "love";
   color: #fff;
-}
-
-.main:before {
-  background-size: 70% auto;
-  width: 100%;
-  height: 100%;
-  content: ""; /* 这个不要漏了 */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /*-1 可以当背景*/
-  opacity: 0.5;
+  z-index: 2;
+  position: relative;
+  top: 30%;
+  /* Vertical center */
+  transform: translateY(-50%);
 }
 
 .acquaintance {
@@ -241,5 +213,23 @@ a {
   margin-top: 5%;
   font-size: 20px;
   font-weight: 200;
+}
+
+#container {
+  overflow: hidden;
+  height: 100vh;
+  background: #edeae8;
+  position: relative;
+}
+
+video {
+  position: absolute;
+  /* Vertical and Horizontal center*/
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 </style>
