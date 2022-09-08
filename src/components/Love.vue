@@ -64,7 +64,7 @@
 var _hmt = _hmt || [];
 (function () {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b8355e277764fa39008454937a81afe6";
+  hm.src = "https://hm.baidu.com/hm.js?651951d10914babd931a8669a5b2c616";
   var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 })();
