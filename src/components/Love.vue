@@ -141,7 +141,7 @@ export default {
 <style>
 @font-face {
   font-family: "love";
-  src: url(../font/FZYiHTJW-EB.TTF);
+  src: url("../font/FZYiHTJW-EB.TTF");
 }
 
 * {
