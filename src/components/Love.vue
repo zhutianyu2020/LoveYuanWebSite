@@ -50,7 +50,7 @@
         </div>
 
         <div class="message">
-          <p>中秋快乐</p>
+          <p>End</p>
         </div>
       </div>
     </div>
@@ -180,6 +180,7 @@ a {
 }
 
 .time {
+  font-size: 18px;
   margin-top: 50px;
 }
 
