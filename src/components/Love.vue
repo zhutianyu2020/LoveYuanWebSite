@@ -5,46 +5,69 @@
         <source src="../video/PC.mp4" type="video/mp4" />
       </video>
       <div class="box">
-        <div class="acquaintance">相识</div>
-        <div class="time">
-          <ul>
-            <li class="days">
-              <div>Days</div>
-              <div>{{ days }}</div>
-            </li>
-            <li class="hours">
-              <div>Hours</div>
-              <div>{{ hours }}</div>
-            </li>
-            <li class="minute">
-              <div>Minutes</div>
-              <div>{{ minutes }}</div>
-            </li>
-            <li class="second">
-              <div>Seconds</div>
-              <div>{{ seconds }}</div>
-            </li>
-          </ul>
-        </div>
+<!--        <div class="acquaintance">相识</div>-->
+<!--        <div class="time">-->
+<!--          <ul>-->
+<!--            <li class="days">-->
+<!--              <div>Days</div>-->
+<!--              <div>{{ days }}</div>-->
+<!--            </li>-->
+<!--            <li class="hours">-->
+<!--              <div>Hours</div>-->
+<!--              <div>{{ hours }}</div>-->
+<!--            </li>-->
+<!--            <li class="minute">-->
+<!--              <div>Minutes</div>-->
+<!--              <div>{{ minutes }}</div>-->
+<!--            </li>-->
+<!--            <li class="second">-->
+<!--              <div>Seconds</div>-->
+<!--              <div>{{ seconds }}</div>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+
 
         <div class="love" @click="choose">相恋</div>
         <div class="time">
           <ul>
             <li class="days">
               <div>Days</div>
-              <div>{{ lovedays }}</div>
+              <div>{{ loveDays }}</div>
             </li>
             <li class="hours">
               <div>Hours</div>
-              <div>{{ lovehours }}</div>
+              <div>{{ loveHours }}</div>
             </li>
             <li class="minute">
               <div>Minutes</div>
-              <div>{{ loveminutes }}</div>
+              <div>{{ loveMinutes }}</div>
             </li>
             <li class="second">
               <div>Seconds</div>
-              <div>{{ loveseconds }}</div>
+              <div>{{ loveSeconds }}</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="acquaintance">相别</div>
+        <div class="time">
+          <ul>
+            <li class="days">
+              <div>Days</div>
+              <div>{{ fallOutDays }}</div>
+            </li>
+            <li class="hours">
+              <div>Hours</div>
+              <div>{{ fallOutHours }}</div>
+            </li>
+            <li class="minute">
+              <div>Minutes</div>
+              <div>{{ fallOutMinutes }}</div>
+            </li>
+            <li class="second">
+              <div>Seconds</div>
+              <div>{{ fallOutSeconds }}</div>
             </li>
           </ul>
         </div>
@@ -82,46 +105,69 @@ export default {
       seconds: 0,
 
       loveTime: new Date(2022, 4, 20, 5, 20, 0),
-      lovedays: 0,
-      lovehours: 0,
-      loveminutes: 0,
-      loveseconds: 0,
+      loveDays: 0,
+      loveHours: 0,
+      loveMinutes: 0,
+      loveSeconds: 0,
+
+      fallOutTime:new Date(2022,6,21,11,7,0),
+      fallOutDays:0,
+      fallOutHours:0,
+      fallOutMinutes:0,
+      fallOutSeconds:0,
+
       centerDialogVisible: false,
-      ifagree: false,
+
+
     };
   },
 
   created() {
-    this.getAcquaintanceTime();
+    // this.getAcquaintanceTime();
     this.getLoveTime();
+    this.getFallOutTime();
   },
 
   methods: {
     getAcquaintanceTime() {
       this.flag = setInterval(() => {
-        var endDate = new Date(2022, 6, 21, 11, 7, 0);
-        var dateDiff = endDate.getTime() - this.FirstAcquaintanceTime.getTime();
+        let endDate = new Date(2022, 6, 21, 11, 7, 0);
+        let dateDiff = endDate.getTime() - this.FirstAcquaintanceTime.getTime();
         this.days = Math.floor(dateDiff / (24 * 3600 * 1000));
-        var remainTime = dateDiff % (24 * 3600 * 1000);
+        let remainTime = dateDiff % (24 * 3600 * 1000);
         this.hours = Math.floor(remainTime / (3600 * 1000));
-        var remainTime1 = remainTime % (3600 * 1000);
+        let remainTime1 = remainTime % (3600 * 1000);
         this.minutes = Math.floor(remainTime1 / (60 * 1000));
-        var remainTime2 = remainTime1 % (60 * 1000);
+        let remainTime2 = remainTime1 % (60 * 1000);
         this.seconds = Math.round(remainTime2 / 1000);
       }, 1000);
     },
     getLoveTime() {
       this.flag = setInterval(() => {
-        var endDate = new Date(2022, 6, 21, 11, 7, 0);
-        var dateDiff = endDate.getTime() - this.loveTime.getTime();
-        this.lovedays = Math.floor(dateDiff / (24 * 3600 * 1000));
-        var remainTime = dateDiff % (24 * 3600 * 1000);
-        this.lovehours = Math.floor(remainTime / (3600 * 1000));
-        var remainTime1 = remainTime % (3600 * 1000);
-        this.loveminutes = Math.floor(remainTime1 / (60 * 1000));
-        var remainTime2 = remainTime1 % (60 * 1000);
-        this.loveseconds = Math.round(remainTime2 / 1000);
+        let endDate = new Date(2022, 6, 21, 11, 7, 0);
+        let dateDiff = endDate.getTime() - this.loveTime.getTime();
+        this.loveDays = Math.floor(dateDiff / (24 * 3600 * 1000));
+        let remainTime = dateDiff % (24 * 3600 * 1000);
+        this.loveHours = Math.floor(remainTime / (3600 * 1000));
+        let remainTime1 = remainTime % (3600 * 1000);
+        this.loveMinutes = Math.floor(remainTime1 / (60 * 1000));
+        let remainTime2 = remainTime1 % (60 * 1000);
+        this.loveSeconds = Math.round(remainTime2 / 1000);
       }, 1000);
+    },
+    getFallOutTime(){
+      this.flag = setInterval(() =>{
+        let nowTime=new Date();
+        let dateDiff = nowTime.getTime() - this.fallOutTime.getTime();
+        this.fallOutDays = Math.floor(dateDiff / (24 * 3600 * 1000));
+        let remainTime = dateDiff % (24 * 3600 * 1000);
+        this.fallOutHours = Math.floor(remainTime / (3600 * 1000));
+        let remainTime1 = remainTime % (3600 * 1000);
+        this.fallOutMinutes = Math.floor(remainTime1 / (60 * 1000));
+        let remainTime2 = remainTime1 % (60 * 1000);
+        this.fallOutSeconds = Math.round(remainTime2 / 1000);
+      },1000);
+
     },
     choose() {
       console.log(this.ifagree);
@@ -180,7 +226,7 @@ a {
 }
 
 .time {
-  font-size: 22px;
+  font-size: 20px;
   margin-top: 50px;
 }
 
@@ -212,7 +258,7 @@ a {
 
 .message {
   margin-top: 5%;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   color: #39c5bb;
   font-weight: 200;
