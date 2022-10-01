@@ -50,7 +50,7 @@
         </div>
 
         <div class="message">
-          <p>End</p>
+          <p>感觉就像一场梦 2022.10.1</p>
         </div>
       </div>
     </div>
@@ -180,7 +180,7 @@ a {
 }
 
 .time {
-  font-size: 18px;
+  font-size: 22px;
   margin-top: 50px;
 }
 
@@ -212,7 +212,9 @@ a {
 
 .message {
   margin-top: 5%;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #39c5bb;
   font-weight: 200;
 }
 
